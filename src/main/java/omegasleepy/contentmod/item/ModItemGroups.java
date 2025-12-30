@@ -12,21 +12,14 @@ import omegasleepy.contentmod.block.ModBlocks;
 
 public class ModItemGroups {
 
-    public static final ItemGroup PINK_GARNET_ITEM_GROUPS = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(ContentMod.MOD_ID, "pink_garnet_items"),
-            FabricItemGroup.builder().icon(() ->  new ItemStack(ModItems.PINK_GARNET))
-                    .displayName(Text.translatable("itemgroup.contentmod.pink_garnet_items"))
-                    .entries((displayContext, entries) -> {
-                      entries.add(ModItems.PINK_GARNET);
-                      entries.add(ModBlocks.PINK_GARNET_BLOCK);
-                    }).build());
-
     public static final ItemGroup MARTINICA = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(ContentMod.MOD_ID, "martinica"),
             FabricItemGroup.builder().icon(() ->  new ItemStack(ModItems.MAGIC_BONEMEAL))
                     .displayName(Text.translatable("itemgroup.contentmod.martinica"))
                     .entries((displayContext, entries) -> {
                       entries.add(ModItems.MAGIC_BONEMEAL);
+                      entries.add(ModBlocks.ORCHID);
+                      entries.add(ModBlocks.CHRYSANTHEMUM);
                     }).build());
 
     public static void registerItemGroups() {

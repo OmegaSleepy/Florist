@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
+import omegasleepy.contentmod.block.ModBlocks;
 import omegasleepy.contentmod.util.ModTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -15,10 +16,12 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure (RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(ModTags.Items.MAGIC_FLOWERS)
-                .add(Items.CORNFLOWER)
-                .add(Items.STONE)
-                .add(Items.LILY_PAD)
-                .add(Items.CORNFLOWER);
+
+        var builder = getOrCreateTagBuilder(ModTags.Items.FLOWERS);
+
+        for(var that: ModBlocks.flowers){
+            builder.add(that.asItem());
+        }
+
     }
 }

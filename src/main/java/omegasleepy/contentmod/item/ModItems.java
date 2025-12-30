@@ -11,7 +11,6 @@ import omegasleepy.contentmod.item.custom.MagicBoneMealItem;
 
 public class ModItems {
 
-    public static final Item PINK_GARNET = registerItem("pink_garnet", new Item(new Item.Settings()));
     public static final Item MAGIC_BONEMEAL = registerItem("magic_bonemeal", new MagicBoneMealItem(new Item.Settings()));
 
 

@@ -1,8 +1,9 @@
 package omegasleepy.contentmod.block;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.*;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -11,6 +12,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import omegasleepy.contentmod.ContentMod;
+import omegasleepy.contentmod.block.custom.MagicFlower;
 import omegasleepy.contentmod.item.ModItems;
 
 import java.util.ArrayList;
@@ -18,11 +20,22 @@ import java.util.List;
 
 public class ModBlocks {
 
-    public static List<Block> flowers = new ArrayList<Block>();
+    public static List<Block> flowers = new ArrayList<>();
 
-    public static final Block PINK_GARNET_BLOCK = registerBlock("pink_garnet_block",
-            new Block(AbstractBlock.Settings.create().strength(4.0F)
-                    .requiresTool().sounds(BlockSoundGroup.AMETHYST_BLOCK)));
+    public static final Block ORCHID = registerBlock("orchid",
+            new MagicFlower(StatusEffects.FIRE_RESISTANCE, 100, MapColor.WHITE));
+
+    public static final Block POTTED_ORCHID = Registry.register(Registries.BLOCK,
+            new Identifier(ContentMod.MOD_ID, "potted_orchid"),
+            new FlowerPotBlock(ORCHID, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()));
+
+    public static final Block CHRYSANTHEMUM = registerBlock("chrysanthemum",
+            new MagicFlower(StatusEffects.FIRE_RESISTANCE, 100, MapColor.YELLOW));
+
+    public static final Block POTTED_CHRYSANTHEMUM = Registry.register(Registries.BLOCK,
+            new Identifier(ContentMod.MOD_ID, "potted_potted_orchid"),
+            new FlowerPotBlock(CHRYSANTHEMUM, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()));
+
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
