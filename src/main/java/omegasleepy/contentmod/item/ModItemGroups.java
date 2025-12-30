@@ -21,6 +21,15 @@ public class ModItemGroups {
                       entries.add(ModBlocks.PINK_GARNET_BLOCK);
                     }).build());
 
+    public static final ItemGroup MARTINICA = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(ContentMod.MOD_ID, "martinica"),
+            FabricItemGroup.builder().icon(() ->  new ItemStack(ModItems.MAGIC_BONEMEAL))
+                    .displayName(Text.translatable("itemgroup.contentmod.martinica"))
+                    .entries((displayContext, entries) -> {
+                      entries.add(ModItems.PINK_GARNET);
+                      entries.add(ModBlocks.PINK_GARNET_BLOCK);
+                    }).build());
+
     public static void registerItemGroups() {
         ContentMod.LOGGER.info("Registering Mod Item Groups for %s".formatted(ContentMod.MOD_ID));
     }

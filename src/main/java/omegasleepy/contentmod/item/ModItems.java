@@ -7,10 +7,12 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import omegasleepy.contentmod.ContentMod;
+import omegasleepy.contentmod.item.custom.MagicBoneMealItem;
 
 public class ModItems {
 
     public static final Item PINK_GARNET = registerItem("pink_garnet", new Item(new Item.Settings()));
+    public static final Item MAGIC_BONEMEAL = registerItem("magic_bonemeal", new MagicBoneMealItem(new Item.Settings()));
 
 
     private static Item registerItem(String name, Item item) {
@@ -22,6 +24,7 @@ public class ModItems {
         ContentMod.LOGGER.info("Registering Mod Items for %s".formatted(ContentMod.MOD_ID));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(fabricItemGroupEntries -> {
             fabricItemGroupEntries.add(PINK_GARNET);
+            fabricItemGroupEntries.add(MAGIC_BONEMEAL);
         });
 
     }

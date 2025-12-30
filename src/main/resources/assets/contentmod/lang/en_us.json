@@ -1,5 +1,7 @@
 {
   "item.contentmod.pink_garnet": "Garnet",
+  "item.contentmod.magic_bonemeal": "Magical Bone Meal",
   "block.contentmod.pink_garnet_block": "Garnet Block",
-  "itemgroup.contentmod.pink_garnet_items": "Garnet Stuff"
+  "itemgroup.contentmod.pink_garnet_items": "Garnet Stuff",
+  "itemgroup.contentmod.martinica": "Martinika"
 }
