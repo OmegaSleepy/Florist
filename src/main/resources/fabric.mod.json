@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "florist_fabric",
+	"version": "${version}",
+	"name": "Florist_fabric",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"OmegaSleepy"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/florist_fabric/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"omegasleepy.florist.Florist_fabric"
+		],
+		"fabric-datagen": [
+			"omegasleepy.florist.Florist_fabricDataGenerator"
+		],
+		"client":[
+			"omegasleepy.florist.mixin.FloristModClient"
+		]
+	},
+	"mixins": [
+		"florist_fabric.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}
