@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "florist_fabric:item/pink_garnet"
+    "layer0": "contentmod:item/pink_garnet"
   }
 }
