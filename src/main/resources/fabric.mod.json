@@ -1,32 +1,32 @@
 {
 	"schemaVersion": 1,
-	"id": "florist_fabric",
+	"id": "contentmod",
 	"version": "${version}",
-	"name": "Florist_fabric",
+	"name": "contentmod",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
 		"OmegaSleepy"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+		"sources": "https://github.com/OmegaSleepy/contentmod"
 	},
-	"license": "CC0-1.0",
-	"icon": "assets/florist_fabric/icon.png",
+	"license": "MIT",
+	"icon": "assets/contentmod/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"omegasleepy.florist.Florist_fabric"
+			"omegasleepy.contentmod.ContentMod"
 		],
 		"fabric-datagen": [
-			"omegasleepy.florist.Florist_fabricDataGenerator"
+			"omegasleepy.contentmod.ContentModDataGenerator"
 		],
-		"client":[
-			"omegasleepy.florist.mixin.FloristModClient"
+		"client": [
+			"omegasleepy.contentmod.ContentModClient"
 		]
 	},
 	"mixins": [
-		"florist_fabric.mixins.json"
+		"contentmod.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.18.4",

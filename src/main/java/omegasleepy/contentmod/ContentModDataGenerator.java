@@ -1,9 +1,9 @@
-package omegasleepy.florist;
+package omegasleepy.contentmod;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
-public class Florist_fabricDataGenerator implements DataGeneratorEntrypoint {
+public class ContentModDataGenerator implements DataGeneratorEntrypoint {
 	@Override
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 

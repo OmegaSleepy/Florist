@@ -1,8 +1,8 @@
-package omegasleepy.florist.mixin;
+package omegasleepy.contentmod;
 
 import net.fabricmc.api.ClientModInitializer;
 
-public class FloristModClient implements ClientModInitializer {
+public class ContentModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient () {
 
