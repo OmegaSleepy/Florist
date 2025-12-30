@@ -20,6 +20,7 @@ public class ModItemGroups {
                       entries.add(ModItems.MAGIC_BONEMEAL);
                       entries.add(ModBlocks.ORCHID);
                       entries.add(ModBlocks.CHRYSANTHEMUM);
+                      entries.add(ModBlocks.AMARYLLIS);
                     }).build());
 
     public static void registerItemGroups() {

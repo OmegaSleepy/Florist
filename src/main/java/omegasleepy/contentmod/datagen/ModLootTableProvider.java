@@ -17,5 +17,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public void generate () {
         addDrop(ModBlocks.ORCHID);
         addDrop(ModBlocks.CHRYSANTHEMUM);
+        addDrop(ModBlocks.AMARYLLIS);
     }
 }

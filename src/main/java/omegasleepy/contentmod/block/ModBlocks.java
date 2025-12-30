@@ -33,8 +33,15 @@ public class ModBlocks {
             new MagicFlower(StatusEffects.FIRE_RESISTANCE, 100, MapColor.YELLOW));
 
     public static final Block POTTED_CHRYSANTHEMUM = Registry.register(Registries.BLOCK,
-            new Identifier(ContentMod.MOD_ID, "potted_potted_orchid"),
+            new Identifier(ContentMod.MOD_ID, "potted_chrysanthemum"),
             new FlowerPotBlock(CHRYSANTHEMUM, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()));
+
+    public static final Block AMARYLLIS = registerBlock("amaryllis",
+            new MagicFlower(StatusEffects.FIRE_RESISTANCE, 100, MapColor.YELLOW));
+
+    public static final Block POTTED_AMARYLLIS = Registry.register(Registries.BLOCK,
+            new Identifier(ContentMod.MOD_ID, "potted_amaryllis"),
+            new FlowerPotBlock(AMARYLLIS, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()));
 
 
     private static Block registerBlock(String name, Block block) {
