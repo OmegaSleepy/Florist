@@ -13,7 +13,12 @@ import net.minecraft.util.Identifier;
 import omegasleepy.contentmod.ContentMod;
 import omegasleepy.contentmod.item.ModItems;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ModBlocks {
+
+    public static List<Block> flowers = new ArrayList<Block>();
 
     public static final Block PINK_GARNET_BLOCK = registerBlock("pink_garnet_block",
             new Block(AbstractBlock.Settings.create().strength(4.0F)
