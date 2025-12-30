@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "#@#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "minecraft:flowers"
+    },
+    "@": {
+      "item": "minecraft:bone_meal"
+    }
+  },
+  "result": {
+    "item": "contentmod:magic_bonemeal",
+    "count": 8
+  },
+  "show_notification": true
+}

@@ -32,9 +32,8 @@ public class ModBlocks {
     public static void registerModBlocks() {
         ContentMod.LOGGER.info("Registering Mod Blocks for %s".formatted(ContentMod.MOD_ID));
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.add(PINK_GARNET_BLOCK);
-
-        });
+//        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
+//            fabricItemGroupEntries.add(PINK_GARNET_BLOCK);
+//        });
     }
 }

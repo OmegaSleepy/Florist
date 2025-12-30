@@ -26,8 +26,7 @@ public class ModItemGroups {
             FabricItemGroup.builder().icon(() ->  new ItemStack(ModItems.MAGIC_BONEMEAL))
                     .displayName(Text.translatable("itemgroup.contentmod.martinica"))
                     .entries((displayContext, entries) -> {
-                      entries.add(ModItems.PINK_GARNET);
-                      entries.add(ModBlocks.PINK_GARNET_BLOCK);
+                      entries.add(ModItems.MAGIC_BONEMEAL);
                     }).build());
 
     public static void registerItemGroups() {

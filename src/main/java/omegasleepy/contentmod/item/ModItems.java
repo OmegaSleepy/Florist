@@ -22,10 +22,10 @@ public class ModItems {
 
     public static void registerModItems() {
         ContentMod.LOGGER.info("Registering Mod Items for %s".formatted(ContentMod.MOD_ID));
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.add(PINK_GARNET);
-            fabricItemGroupEntries.add(MAGIC_BONEMEAL);
-        });
+//        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(fabricItemGroupEntries -> {
+//            fabricItemGroupEntries.add(PINK_GARNET);
+//            fabricItemGroupEntries.add(MAGIC_BONEMEAL);
+//        });
 
     }
 
