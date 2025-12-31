@@ -1,20 +1,14 @@
 package omegasleepy.contentmod.util;
 
-import com.mojang.datafixers.types.templates.Tag;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
 import omegasleepy.contentmod.block.ModBlocks;
 import omegasleepy.contentmod.item.ModItems;
 import omegasleepy.contentmod.villager.ModVillagers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ModCustomTrades {
@@ -81,7 +75,7 @@ public class ModCustomTrades {
     }
 
     private static void addAllFlowers (List<TradeOffers.Factory> factories) {
-        for (var that : ModBlocks.flowers) {
+        for (var that : ModBlocks.oneTallFlowers) {
             factories.add((entity, random) -> new TradeOffer(
                     new ItemStack(Items.EMERALD, 8),
                     new ItemStack(that, 16),

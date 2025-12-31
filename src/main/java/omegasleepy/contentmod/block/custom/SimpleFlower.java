@@ -8,8 +8,8 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.sound.BlockSoundGroup;
 import omegasleepy.contentmod.block.ModBlocks;
 
-public class MagicFlower extends FlowerBlock {
-    public MagicFlower (StatusEffect suspiciousStewEffect, int effectDuration, MapColor mapColor) {
+public class SimpleFlower extends FlowerBlock {
+    public SimpleFlower (StatusEffect suspiciousStewEffect, int effectDuration, MapColor mapColor) {
         super(suspiciousStewEffect, effectDuration,
                 AbstractBlock.Settings.create()
                         .mapColor(mapColor)
@@ -18,6 +18,6 @@ public class MagicFlower extends FlowerBlock {
                         .sounds(BlockSoundGroup.GRASS)
                         .offset(AbstractBlock.OffsetType.XZ)
                         .pistonBehavior(PistonBehavior.DESTROY));
-        ModBlocks.flowers.add(this);
+        ModBlocks.oneTallFlowers.add(this);
     }
 }
