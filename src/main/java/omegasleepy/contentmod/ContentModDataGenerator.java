@@ -2,7 +2,6 @@ package omegasleepy.contentmod;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import omegasleepy.contentmod.block.ModBlocks;
 import omegasleepy.contentmod.datagen.*;
 
 public class ContentModDataGenerator implements DataGeneratorEntrypoint {

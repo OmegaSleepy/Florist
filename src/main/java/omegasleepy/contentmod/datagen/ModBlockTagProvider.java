@@ -18,11 +18,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     protected void configure (RegistryWrapper.WrapperLookup wrapperLookup) {
         var builder = getOrCreateTagBuilder(ModTags.Blocks.FLOWERS);
 
-        for (Block block: ModBlocks.oneTallFlowers) {
-            builder.add(block);
-        }
-
-        for (var that: ModBlocks.twoTallFlowers){
+        for (var that: ModBlocks.flowers){
             builder.add(that);
         }
 

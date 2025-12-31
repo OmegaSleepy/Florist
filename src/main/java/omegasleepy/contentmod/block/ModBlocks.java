@@ -5,6 +5,7 @@ import net.minecraft.block.*;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -23,29 +24,35 @@ public class ModBlocks {
     public static List<Block> oneTallFlowers = new ArrayList<>();
     public static List<Block> twoTallFlowers = new ArrayList<>();
     public static List<Block> flowerbeds = new ArrayList<>();
+    public static List<Block> flowers = new ArrayList<>();
     public static Map<Block, Block> flowersAndPots = new HashMap<>();
     public static List<Block> flowerPots = new ArrayList<>();
 
-    public static final Block ORCHID = registerBlock("orchid",
-            new SimpleFlower(StatusEffects.FIRE_RESISTANCE, 100, MapColor.PALE_PURPLE));
+    public static final Block ORCHID = registerFlower("orchid",
+            new SimpleFlower(StatusEffects.FIRE_RESISTANCE, 100, MapColor.PALE_PURPLE, Items.MAGENTA_DYE));
 
-    public static final Block POTTED_ORCHID = registerFlowerPot(ORCHID, "orchid");
+//    public static final Block POTTED_ORCHID = registerFlowerPot(ORCHID, "orchid");
 
-    public static final Block CHRYSANTHEMUM = registerBlock("chrysanthemum",
-            new SimpleFlower(StatusEffects.FIRE_RESISTANCE, 100, MapColor.YELLOW));
+    public static final Block CHRYSANTHEMUM = registerFlower("chrysanthemum",
+            new SimpleFlower(StatusEffects.FIRE_RESISTANCE, 100, MapColor.YELLOW, Items.YELLOW_DYE));
 
-    public static final Block POTTED_CHRYSANTHEMUM = registerFlowerPot(CHRYSANTHEMUM, "chrysanthemum");
+//    public static final Block POTTED_CHRYSANTHEMUM = registerFlowerPot(CHRYSANTHEMUM, "chrysanthemum");
 
-    public static final Block AMARYLLIS = registerBlock("amaryllis",
-            new SimpleFlower(StatusEffects.FIRE_RESISTANCE, 100, MapColor.DARK_RED));
+    public static final Block AMARYLLIS = registerFlower("amaryllis",
+            new SimpleFlower(StatusEffects.FIRE_RESISTANCE, 100, MapColor.DARK_RED, Items.RED_DYE));
 
-    public static final Block POTTED_AMARYLLIS = registerFlowerPot(AMARYLLIS, "amaryllis");
+//    public static final Block POTTED_AMARYLLIS = registerFlowerPot(AMARYLLIS, "amaryllis");
 
-    public static final Block EVY = registerBlock("evy",
-            new SimpleFlowerBed(MapColor.DARK_GREEN));
+    public static final Block BLUEBELL = registerFlower("bluebell",
+            new  SimpleFlower(StatusEffects.REGENERATION, 100, MapColor.TERRACOTTA_PURPLE, Items.BLUE_DYE));
+
+//    public static final Block POTTED_BLUEBELl = registerFlowerPot(BLUEBELL, "bluebell");
+
+    public static final Block IVY = registerBlock("ivy",
+            new SimpleFlowerBed(MapColor.DARK_GREEN, Items.GREEN_DYE));
 
     public static final Block RED_GINGER = registerBlock("red_ginger",
-            new SimpleTallFlower(MapColor.RED));
+            new SimpleTallFlower(MapColor.RED, Items.RED_DYE));
 
 
     private static Block registerBlock(String name, Block block) {
@@ -53,12 +60,17 @@ public class ModBlocks {
         return Registry.register(Registries.BLOCK, Identifier.of(ContentMod.MOD_ID, name), block);
     }
 
-    private static Block registerFlowerPot(Block flower, String flowerName) {
+    private static Block registerFlower(String name, Block block) {
+        registerBlockItem(name, block);
+        flowersAndPots.put(block, registerFlowerPot(name, block));
+        return Registry.register(Registries.BLOCK, Identifier.of(ContentMod.MOD_ID, name), block);
+    }
+
+    private static Block registerFlowerPot(String flowerName, Block flower) {
         var result = Registry.register(Registries.BLOCK,
                 new Identifier(ContentMod.MOD_ID, "potted_" +  flowerName),
                 new FlowerPotBlock(flower, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()));
         flowerPots.add(result);
-        flowersAndPots.put(flower, result);
         return result;
     }
 
@@ -69,5 +81,9 @@ public class ModBlocks {
 
     public static void registerModBlocks() {
         ContentMod.LOGGER.info("Registering Mod Blocks for %s".formatted(ContentMod.MOD_ID));
+    }
+
+    public static List<List<Block>> getLists(){
+        return List.of(oneTallFlowers, twoTallFlowers, flowerbeds);
     }
 }

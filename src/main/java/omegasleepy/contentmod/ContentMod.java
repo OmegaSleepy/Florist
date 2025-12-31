@@ -2,8 +2,6 @@ package omegasleepy.contentmod;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
-import net.minecraft.village.TradeOffer;
 import omegasleepy.contentmod.block.ModBlocks;
 import omegasleepy.contentmod.item.ModItemGroups;
 import omegasleepy.contentmod.item.ModItems;

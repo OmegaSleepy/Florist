@@ -27,14 +27,14 @@ public class ModCustomTrades {
                             new ItemStack(Items.BONE_MEAL, 16),
                             new ItemStack(Items.EMERALD, 1),
                             16,
-                            5,
+                            1,
                             0.05f
                     ));
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(Items.EMERALD, 1),
                             new ItemStack(Items.FLOWER_POT, 4),
                             16,
-                            10,
+                            2,
                             0.05f
                     ));
                 });
@@ -72,24 +72,40 @@ public class ModCustomTrades {
                     ));
                 });
 
+        TradeOfferHelper.registerVillagerOffers(ModVillagers.BOTANIC, 5,
+                ModCustomTrades::addAllTallFlowers);
+
     }
 
     private static void addAllFlowers (List<TradeOffers.Factory> factories) {
-        for (var that : ModBlocks.oneTallFlowers) {
+        for (var that : ModBlocks.flowers) {
             factories.add((entity, random) -> new TradeOffer(
-                    new ItemStack(Items.EMERALD, 8),
-                    new ItemStack(that, 16),
+                    new ItemStack(Items.EMERALD, 4),
+                    new ItemStack(that, 8),
                     16,
-                    10,
+                    2,
+                    0.05f
+            ));
+        }
+    }
+
+    private static void addAllTallFlowers (List<TradeOffers.Factory> factories) {
+        for (var that : ModBlocks.twoTallFlowers) {
+            factories.add((entity, random) -> new TradeOffer(
+                    new ItemStack(Items.EMERALD, 4),
+                    new ItemStack(that, 8),
+                    16,
+                    2,
                     0.05f
             ));
         }
     }
 
 
+
+
     public static void registerCustomTrades () {
         botanist();
-
     }
 
 }

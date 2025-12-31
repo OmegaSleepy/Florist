@@ -5,12 +5,14 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.Items;
-import net.minecraft.recipe.ShapelessRecipe;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
 import omegasleepy.contentmod.ContentMod;
 import omegasleepy.contentmod.block.ModBlocks;
+import omegasleepy.contentmod.block.custom.SimpleFlower;
+import omegasleepy.contentmod.block.custom.SimpleFlowerBed;
+import omegasleepy.contentmod.block.custom.SimpleTallFlower;
 import omegasleepy.contentmod.item.ModItems;
 import omegasleepy.contentmod.util.ModTags;
 
@@ -42,12 +44,25 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.MAGIC_BONEMEAL), conditionsFromItem(ModItems.MAGIC_BONEMEAL))
                 .offerTo(consumer, Identifier.of(ContentMod.MOD_ID, "magic_bonemeal_with_magical_flowers"));
 
+        //here we leave each seperate because flawers in minecraft give different outputCount based on their size
+        for(var that: ModBlocks.oneTallFlowers){
+            if(that instanceof SimpleFlower exactlyThat){
+                offerShapelessRecipe(consumer, exactlyThat.getDye(), that, "", 1);
+            }
+        }
 
-        offerShapelessRecipe(consumer, Items.YELLOW_DYE, ModBlocks.CHRYSANTHEMUM, "", 1);
-        offerShapelessRecipe(consumer, Items.MAGENTA_DYE, ModBlocks.ORCHID, "", 1);
-        offerShapelessRecipe(consumer, Items.RED_DYE, ModBlocks.AMARYLLIS, "", 1);
-        offerShapelessRecipe(consumer, Items.GREEN_DYE, ModBlocks.EVY, "", 1);
-        offerShapelessRecipe(consumer, Items.RED_DYE, ModBlocks.RED_GINGER, "", 2);
+        for(var that: ModBlocks.flowerbeds){
+            if(that instanceof SimpleFlowerBed exactlyThat){
+                offerShapelessRecipe(consumer, exactlyThat.getDye(), that, "", 1);
+            }
+        }
+
+        for(var that: ModBlocks.twoTallFlowers){
+            if(that instanceof SimpleTallFlower exactlyThat){
+                offerShapelessRecipe(consumer, exactlyThat.getDye(), that, "", 2);
+            }
+        }
+
     }
 
 

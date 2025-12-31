@@ -12,10 +12,8 @@ public class ContentModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient () {
 
-        createCutOut(ModBlocks.oneTallFlowers);
+        createCutOut(ModBlocks.flowers);
         createCutOut(ModBlocks.flowerPots);
-        createCutOut(ModBlocks.twoTallFlowers);
-        createCutOut(ModBlocks.flowerbeds);
 
     }
 

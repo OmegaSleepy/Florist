@@ -23,8 +23,7 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.contentmod.martinica"))
                     .entries((displayContext, entries) -> {
                       entries.add(ModItems.MAGIC_BONEMEAL);
-                      entries.addAll(getBlocks(ModBlocks.oneTallFlowers));
-                      entries.addAll(getBlocks(ModBlocks.twoTallFlowers));
+                      entries.addAll(getBlocks(ModBlocks.flowers));
                     }).build());
 
 
