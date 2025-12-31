@@ -2,9 +2,11 @@ package omegasleepy.contentmod;
 
 import net.fabricmc.api.ModInitializer;
 
+import omegasleepy.contentmod.behavior.ModBehavior;
 import omegasleepy.contentmod.block.ModBlocks;
 import omegasleepy.contentmod.item.ModItemGroups;
 import omegasleepy.contentmod.item.ModItems;
+import omegasleepy.contentmod.particle.ModParticles;
 import omegasleepy.contentmod.util.ModCompostable;
 import omegasleepy.contentmod.util.ModCustomTrades;
 import omegasleepy.contentmod.villager.ModVillagers;
@@ -20,6 +22,10 @@ public class ContentMod implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+
+		ModParticles.registerParticles();
+
+		ModBehavior.registerModBehavior();
 
 		ModCompostable.registerCompostable();
 

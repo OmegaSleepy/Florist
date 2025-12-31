@@ -11,6 +11,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.world.World;
+import omegasleepy.contentmod.particle.ModParticles;
 import omegasleepy.contentmod.util.ModTags;
 
 public class MagicBoneMealItem extends Item {
@@ -47,9 +48,9 @@ public class MagicBoneMealItem extends Item {
 
 
                 ((ServerWorld) world).spawnParticles(
-                        ParticleTypes.SNOWFLAKE,
+                        ModParticles.GREEN_SPARKLE,
                         x + 0.5,
-                        y + 1,
+                        y + 2,
                         z + 0.5,
                         300,
                         0,
