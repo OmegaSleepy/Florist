@@ -44,8 +44,8 @@ public class ModBlocks {
     public static final Block SOMETHING = registerBlock("something",
             new SimpleFlowerBed(MapColor.BLACK));
 
-    public static final Block THAT = registerBlock("that",
-            new SimpleTallFlower(MapColor.PURPLE));
+    public static final Block RED_GINGER = registerBlock("red_ginger",
+            new SimpleTallFlower(MapColor.RED));
 
 
     private static Block registerBlock(String name, Block block) {
