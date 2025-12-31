@@ -1,6 +1,8 @@
 package omegasleepy.contentmod.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -10,6 +12,9 @@ import net.minecraft.util.Identifier;
 import omegasleepy.contentmod.ContentMod;
 import omegasleepy.contentmod.block.ModBlocks;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ModItemGroups {
 
     public static final ItemGroup MARTINICA = Registry.register(Registries.ITEM_GROUP,
@@ -18,12 +23,28 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.contentmod.martinica"))
                     .entries((displayContext, entries) -> {
                       entries.add(ModItems.MAGIC_BONEMEAL);
-                      entries.add(ModBlocks.ORCHID);
-                      entries.add(ModBlocks.CHRYSANTHEMUM);
-                      entries.add(ModBlocks.AMARYLLIS);
+                      entries.addAll(getBlocks(ModBlocks.oneTallFlowers));
+                      entries.addAll(getBlocks(ModBlocks.twoTallFlowers));
                     }).build());
+
 
     public static void registerItemGroups() {
         ContentMod.LOGGER.info("Registering Mod Item Groups for %s".formatted(ContentMod.MOD_ID));
+    }
+
+    private static List<ItemStack> getBlocks(List<Block> blocks) {
+        List<ItemStack> itemStacks = new ArrayList<>();
+        for (Block block : blocks) {
+            itemStacks.add(new ItemStack(block));
+        }
+        return itemStacks;
+    }
+
+    private static List<ItemStack> getItems(List<Item> items) {
+        List<ItemStack> itemStacks = new ArrayList<>();
+        for (Item item : items) {
+            items.add(item.asItem());
+        }
+        return itemStacks;
     }
 }

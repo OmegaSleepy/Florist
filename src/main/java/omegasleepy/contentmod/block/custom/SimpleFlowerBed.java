@@ -14,7 +14,6 @@ public class SimpleFlowerBed extends FlowerbedBlock {
                 .noCollision()
                 .breakInstantly()
                 .sounds(BlockSoundGroup.GRASS)
-                .offset(AbstractBlock.OffsetType.XZ)
                 .pistonBehavior(PistonBehavior.DESTROY));
 
         ModBlocks.oneTallFlowers.add(this);

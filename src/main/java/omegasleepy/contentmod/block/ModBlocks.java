@@ -41,8 +41,8 @@ public class ModBlocks {
 
     public static final Block POTTED_AMARYLLIS = registerFlowerPot(AMARYLLIS, "amaryllis");
 
-    public static final Block SOMETHING = registerBlock("something",
-            new SimpleFlowerBed(MapColor.BLACK));
+    public static final Block EVY = registerBlock("evy",
+            new SimpleFlowerBed(MapColor.DARK_GREEN));
 
     public static final Block RED_GINGER = registerBlock("red_ginger",
             new SimpleTallFlower(MapColor.RED));

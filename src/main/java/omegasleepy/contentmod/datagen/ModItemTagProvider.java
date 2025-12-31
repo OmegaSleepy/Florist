@@ -2,6 +2,7 @@ package omegasleepy.contentmod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.block.ComposterBlock;
 import net.minecraft.registry.RegistryWrapper;
 import omegasleepy.contentmod.block.ModBlocks;
 import omegasleepy.contentmod.util.ModTags;
@@ -21,6 +22,12 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         for(var that: ModBlocks.oneTallFlowers){
             builder.add(that.asItem());
         }
+
+        for(var that: ModBlocks.twoTallFlowers){
+            builder.add(that.asItem());
+        }
+
+
 
     }
 }

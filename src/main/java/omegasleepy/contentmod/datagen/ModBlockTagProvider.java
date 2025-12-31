@@ -22,6 +22,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             builder.add(block);
         }
 
+        for (var that: ModBlocks.twoTallFlowers){
+            builder.add(that);
+        }
+
 
     }
 }

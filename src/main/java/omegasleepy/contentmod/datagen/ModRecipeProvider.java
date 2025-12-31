@@ -46,6 +46,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerShapelessRecipe(consumer, Items.YELLOW_DYE, ModBlocks.CHRYSANTHEMUM, "", 1);
         offerShapelessRecipe(consumer, Items.MAGENTA_DYE, ModBlocks.ORCHID, "", 1);
         offerShapelessRecipe(consumer, Items.RED_DYE, ModBlocks.AMARYLLIS, "", 1);
+        offerShapelessRecipe(consumer, Items.GREEN_DYE, ModBlocks.EVY, "", 1);
+        offerShapelessRecipe(consumer, Items.RED_DYE, ModBlocks.RED_GINGER, "", 2);
     }
 
 

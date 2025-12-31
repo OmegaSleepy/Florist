@@ -15,7 +15,6 @@ public class SimpleTallFlower extends TallFlowerBlock {
                 .noCollision()
                 .breakInstantly()
                 .sounds(BlockSoundGroup.GRASS)
-                .offset(AbstractBlock.OffsetType.XZ)
                 .pistonBehavior(PistonBehavior.DESTROY));
         ModBlocks.twoTallFlowers.add(this);
     }

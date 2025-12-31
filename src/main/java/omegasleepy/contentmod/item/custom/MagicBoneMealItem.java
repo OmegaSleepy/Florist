@@ -10,6 +10,8 @@ import net.minecraft.item.ItemUsageContext;
 import net.minecraft.particle.BlockStateParticleEffect;
 import net.minecraft.particle.ParticleType;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -45,22 +47,25 @@ public class MagicBoneMealItem extends Item {
                 context.getStack().decrement(1);
                 world.playSound(null, context.getBlockPos(), SoundEvents.BLOCK_AMETHYST_BLOCK_RESONATE, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
-                world.spawnEntity(
-                        new ItemEntity(
-                                world,
-                                x+0.5,y,z+0.5,
-                                blockClicked.getPickStack(world,context.getBlockPos(),blockClicked.getDefaultState())));
+                for (int i = 0; i < 2; i++) {
+                    world.spawnEntity(
+                            new ItemEntity(
+                                    world,
+                                    x+0.5,y,z+0.5,
+                                    blockClicked.getPickStack(world,context.getBlockPos(),blockClicked.getDefaultState())));
+                }
+
 
                 ((ServerWorld) world).spawnParticles(
                         ParticleTypes.SNOWFLAKE,
                         x + 0.5,
                         y + 1,
                         z + 0.5,
-                        10,
+                        300,
                         0,
+                        1,
                         0,
-                        0,
-                        0.67
+                        0.01
                         );
             } else{
                 return ActionResult.FAIL;
@@ -75,6 +80,8 @@ public class MagicBoneMealItem extends Item {
 
 
     private boolean isValidBlock (Block blockClicked) {
-        return blockClicked.getDefaultState().isIn(ModTags.Blocks.FLOWERS);
+        return blockClicked.getDefaultState().isIn(ModTags.Blocks.FLOWERS) ||
+                blockClicked.getDefaultState().isIn(BlockTags.FLOWERS) ||
+                blockClicked.getDefaultState().isIn(BlockTags.TALL_FLOWERS);
     }
 }

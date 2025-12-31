@@ -1,8 +1,14 @@
 {
   "item.contentmod.magic_bonemeal": "Magical Bone Meal",
+
   "block.contentmod.orchid": "Orchid",
   "block.contentmod.chrysanthemum": "Chrysanthemum",
   "block.contentmod.amaryllis": "Amaryllis",
+
+  "block.contentmod.red_ginger": "Red Ginger",
+  "block.contentmod.evy": "Green Evy",
+
   "entity.minecraft.villager.botanic": "Botanist",
+
   "itemgroup.contentmod.martinica": "Martinika"
 }

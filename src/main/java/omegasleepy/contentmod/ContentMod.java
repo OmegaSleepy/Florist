@@ -7,6 +7,7 @@ import net.minecraft.village.TradeOffer;
 import omegasleepy.contentmod.block.ModBlocks;
 import omegasleepy.contentmod.item.ModItemGroups;
 import omegasleepy.contentmod.item.ModItems;
+import omegasleepy.contentmod.util.ModCompostable;
 import omegasleepy.contentmod.util.ModCustomTrades;
 import omegasleepy.contentmod.villager.ModVillagers;
 import org.slf4j.Logger;
@@ -21,6 +22,8 @@ public class ContentMod implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+
+		ModCompostable.registerCompostable();
 
 		ModVillagers.registerVillagers();
 		ModCustomTrades.registerCustomTrades();

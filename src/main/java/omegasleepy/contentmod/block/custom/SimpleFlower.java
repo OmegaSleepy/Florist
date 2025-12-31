@@ -20,4 +20,6 @@ public class SimpleFlower extends FlowerBlock {
                         .pistonBehavior(PistonBehavior.DESTROY));
         ModBlocks.oneTallFlowers.add(this);
     }
+
+
 }
