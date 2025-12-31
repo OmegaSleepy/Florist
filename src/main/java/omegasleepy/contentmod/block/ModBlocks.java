@@ -23,7 +23,7 @@ public class ModBlocks {
     public static List<Block> flowers = new ArrayList<>();
 
     public static final Block ORCHID = registerBlock("orchid",
-            new MagicFlower(StatusEffects.FIRE_RESISTANCE, 100, MapColor.WHITE));
+            new MagicFlower(StatusEffects.FIRE_RESISTANCE, 100, MapColor.PALE_PURPLE));
 
     public static final Block POTTED_ORCHID = Registry.register(Registries.BLOCK,
             new Identifier(ContentMod.MOD_ID, "potted_orchid"),
@@ -37,12 +37,33 @@ public class ModBlocks {
             new FlowerPotBlock(CHRYSANTHEMUM, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()));
 
     public static final Block AMARYLLIS = registerBlock("amaryllis",
-            new MagicFlower(StatusEffects.FIRE_RESISTANCE, 100, MapColor.YELLOW));
+            new MagicFlower(StatusEffects.FIRE_RESISTANCE, 100, MapColor.DARK_RED));
 
     public static final Block POTTED_AMARYLLIS = Registry.register(Registries.BLOCK,
             new Identifier(ContentMod.MOD_ID, "potted_amaryllis"),
             new FlowerPotBlock(AMARYLLIS, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()));
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //end
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
@@ -56,9 +77,5 @@ public class ModBlocks {
 
     public static void registerModBlocks() {
         ContentMod.LOGGER.info("Registering Mod Blocks for %s".formatted(ContentMod.MOD_ID));
-
-//        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
-//            fabricItemGroupEntries.add(PINK_GARNET_BLOCK);
-//        });
     }
 }

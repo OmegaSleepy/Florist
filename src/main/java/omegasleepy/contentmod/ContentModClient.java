@@ -2,7 +2,11 @@ package omegasleepy.contentmod;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.sound.PositionedSoundInstance;
+import net.minecraft.sound.SoundEvents;
 import omegasleepy.contentmod.block.ModBlocks;
 
 public class ContentModClient implements ClientModInitializer {
@@ -18,4 +22,5 @@ public class ContentModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_AMARYLLIS, RenderLayer.getCutout());
 
     }
+
 }
