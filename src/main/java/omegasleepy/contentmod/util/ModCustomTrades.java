@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
+import omegasleepy.contentmod.MainLogic;
 import omegasleepy.contentmod.block.ModBlocks;
 import omegasleepy.contentmod.item.ModItems;
 import omegasleepy.contentmod.villager.ModVillagers;
@@ -91,6 +92,7 @@ public class ModCustomTrades {
     }
 
     public static void registerCustomTrades () {
+        MainLogic.LOGGER.info("Registering Custom Villager Trades for {}}", MainLogic.MOD_ID);
         botanist();
     }
 

@@ -38,7 +38,7 @@ public class ModVillagers {
 
     //TODO find out why the villager has a strange texture issues
     public static void registerVillagers(){
-        MainLogic.LOGGER.info("Registering Villagers for " + MainLogic.MOD_ID);
+        MainLogic.LOGGER.info("Registering Mod Villagers for {}}", MainLogic.MOD_ID);
     }
 
 }

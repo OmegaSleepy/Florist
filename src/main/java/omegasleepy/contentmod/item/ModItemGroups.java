@@ -28,7 +28,7 @@ public class ModItemGroups {
 
 
     public static void registerItemGroups() {
-        MainLogic.LOGGER.info("Registering Mod Item Groups for %s".formatted(MainLogic.MOD_ID));
+        MainLogic.LOGGER.info("Registering Mod Item Groups for {}}", MainLogic.MOD_ID);
     }
 
     private static List<ItemStack> getBlocks(List<Block> blocks) {

@@ -18,12 +18,7 @@ public class ModItems {
 
 
     public static void registerModItems() {
-        MainLogic.LOGGER.info("Registering Mod Items for %s".formatted(MainLogic.MOD_ID));
-//        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(fabricItemGroupEntries -> {
-//            fabricItemGroupEntries.add(PINK_GARNET);
-//            fabricItemGroupEntries.add(MAGIC_BONEMEAL);
-//        });
-
+        MainLogic.LOGGER.info("Registering Mod Items for {}", MainLogic.MOD_ID);
     }
 
 }

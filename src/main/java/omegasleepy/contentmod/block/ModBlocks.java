@@ -91,7 +91,7 @@ public class ModBlocks {
     }
 
     public static void registerModBlocks() {
-        MainLogic.LOGGER.info("Registering Mod Blocks for %s".formatted(MainLogic.MOD_ID));
+        MainLogic.LOGGER.info("Registering Mod Blocks for {}}", MainLogic.MOD_ID);
     }
 
     public static List<List<Block>> getLists(){
