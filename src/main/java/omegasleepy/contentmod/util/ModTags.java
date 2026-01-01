@@ -20,6 +20,7 @@ public class ModTags {
     public static class Items {
 
         public static final TagKey<Item> FLOWERS = createTag("magic_flowers");
+        public static final TagKey<Item> MONEY = createTag("money");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(MainLogic.MOD_ID, name));

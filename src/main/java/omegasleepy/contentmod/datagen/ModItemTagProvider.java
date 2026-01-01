@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
 import omegasleepy.contentmod.block.ModBlocks;
+import omegasleepy.contentmod.item.ModItems;
 import omegasleepy.contentmod.util.ModTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -21,6 +22,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         for (var that: ModBlocks.flowers){
             builder.add(that.asItem());
         }
+
+        builder = getOrCreateTagBuilder(ModTags.Items.MONEY);
+        ModItems.money_items.forEach(builder::add);
 
     }
 }

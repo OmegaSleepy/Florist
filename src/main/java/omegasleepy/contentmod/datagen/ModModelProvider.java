@@ -56,5 +56,8 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels (ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.MAGIC_BONEMEAL, Models.GENERATED);
+
+        ModItems.money_items.forEach((item) -> itemModelGenerator.register(item, Models.GENERATED));
+
     }
 }

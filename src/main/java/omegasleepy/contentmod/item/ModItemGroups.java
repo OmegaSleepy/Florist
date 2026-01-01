@@ -2,6 +2,7 @@ package omegasleepy.contentmod.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.block.Block;
+import net.minecraft.data.Main;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -26,6 +27,15 @@ public class ModItemGroups {
                       entries.addAll(getBlocks(ModBlocks.flowers));
                     }).build());
 
+    public static final ItemGroup MONEY = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(MainLogic.MOD_ID, "money"),
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.ONE_HUNDRED_KARAT))
+                    .displayName(Text.translatable("itemgroup.contentmod.martinica"))
+                    .entries((displayContext, entries) -> {
+                        entries.addAll(getItems(ModItems.money_items));
+                    }).build()
+            );
+
 
     public static void registerItemGroups() {
         MainLogic.LOGGER.info("Registering Mod Item Groups for {}}", MainLogic.MOD_ID);
@@ -42,7 +52,7 @@ public class ModItemGroups {
     private static List<ItemStack> getItems(List<Item> items) {
         List<ItemStack> itemStacks = new ArrayList<>();
         for (Item item : items) {
-            items.add(item.asItem());
+            itemStacks.add(new ItemStack(item));
         }
         return itemStacks;
     }
