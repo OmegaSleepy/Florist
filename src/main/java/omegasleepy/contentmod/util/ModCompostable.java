@@ -19,5 +19,9 @@ public class ModCompostable {
             ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(that.asItem(), 0.7F);
         }
 
+        for(var that: ModBlocks.lilies){
+            ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(that.asItem(), 0.65F);
+        }
+
     }
 }

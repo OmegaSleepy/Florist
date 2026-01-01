@@ -11,7 +11,7 @@ import omegasleepy.contentmod.particle.ModParticles;
 
 import java.util.List;
 
-public class ContentModClient implements ClientModInitializer {
+public class MainClient implements ClientModInitializer {
     @Override
     public void onInitializeClient () {
 

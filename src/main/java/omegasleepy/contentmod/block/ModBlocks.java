@@ -9,9 +9,10 @@ import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import omegasleepy.contentmod.ContentMod;
+import omegasleepy.contentmod.MainLogic;
 import omegasleepy.contentmod.block.custom.SimpleFlower;
 import omegasleepy.contentmod.block.custom.SimpleFlowerBed;
+import omegasleepy.contentmod.block.custom.SimpleLilyPad;
 import omegasleepy.contentmod.block.custom.SimpleTallFlower;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class ModBlocks {
     public static List<Block> oneTallFlowers = new ArrayList<>();
     public static List<Block> twoTallFlowers = new ArrayList<>();
     public static List<Block> flowerbeds = new ArrayList<>();
+    public static List<Block> lilies = new ArrayList<>();
     public static List<Block> flowers = new ArrayList<>();
     public static Map<Block, Block> flowersAndPots = new HashMap<>();
     public static List<Block> flowerPots = new ArrayList<>();
@@ -46,7 +48,13 @@ public class ModBlocks {
             new  SimpleFlower(StatusEffects.REGENERATION, 100, MapColor.TERRACOTTA_PURPLE, Items.BLUE_DYE));
 
 
+    /* ===== LILIES ===== */
+
+    public static final Block FLOWER_LILY = registerBlock("flower_lily", new SimpleLilyPad());
+
+
     /* ===== FLOWERBEDS ===== */
+
     public static final Block IVY = registerBlock("ivy",
             new SimpleFlowerBed(MapColor.DARK_GREEN, Items.GREEN_DYE));
 
@@ -56,34 +64,34 @@ public class ModBlocks {
     public static final Block RED_GINGER = registerBlock("red_ginger",
             new SimpleTallFlower(MapColor.RED, Items.RED_DYE));
 
-
+    /* ===== Utility ===== */
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, Identifier.of(ContentMod.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(MainLogic.MOD_ID, name), block);
     }
 
     private static Block registerFlower(String name, Block block) {
         registerBlockItem(name, block);
         flowersAndPots.put(block, registerFlowerPot(name, block));
-        return Registry.register(Registries.BLOCK, Identifier.of(ContentMod.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(MainLogic.MOD_ID, name), block);
     }
 
     private static Block registerFlowerPot(String flowerName, Block flower) {
         var result = Registry.register(Registries.BLOCK,
-                new Identifier(ContentMod.MOD_ID, "potted_" +  flowerName),
+                new Identifier(MainLogic.MOD_ID, "potted_" +  flowerName),
                 new FlowerPotBlock(flower, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()));
         flowerPots.add(result);
         return result;
     }
 
     private static void registerBlockItem(String name, Block block) {
-        Registry.register(Registries.ITEM, new Identifier(ContentMod.MOD_ID, name),
+        Registry.register(Registries.ITEM, new Identifier(MainLogic.MOD_ID, name),
                 new BlockItem(block, new Item.Settings()));
     }
 
     public static void registerModBlocks() {
-        ContentMod.LOGGER.info("Registering Mod Blocks for %s".formatted(ContentMod.MOD_ID));
+        MainLogic.LOGGER.info("Registering Mod Blocks for %s".formatted(MainLogic.MOD_ID));
     }
 
     public static List<List<Block>> getLists(){

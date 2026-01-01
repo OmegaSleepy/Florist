@@ -5,7 +5,7 @@ import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import omegasleepy.contentmod.ContentMod;
+import omegasleepy.contentmod.MainLogic;
 
 public class ModParticles {
 
@@ -13,11 +13,11 @@ public class ModParticles {
             createParticleType("green_sparkle_particle", FabricParticleTypes.simple(true));
 
     private static DefaultParticleType createParticleType (String particleName, DefaultParticleType defaultParticleType) {
-        return Registry.register(Registries.PARTICLE_TYPE, Identifier.of(ContentMod.MOD_ID, particleName), defaultParticleType);
+        return Registry.register(Registries.PARTICLE_TYPE, Identifier.of(MainLogic.MOD_ID, particleName), defaultParticleType);
     }
 
     public static void registerParticles() {
-        ContentMod.LOGGER.info("Registering Particles for " + ContentMod.MOD_ID);
+        MainLogic.LOGGER.info("Registering Particles for " + MainLogic.MOD_ID);
     }
 
 

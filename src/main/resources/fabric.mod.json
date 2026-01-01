@@ -16,13 +16,13 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"omegasleepy.contentmod.ContentMod"
+			"omegasleepy.contentmod.MainLogic"
 		],
 		"fabric-datagen": [
-			"omegasleepy.contentmod.ContentModDataGenerator"
+			"omegasleepy.contentmod.DataGenManager"
 		],
 		"client": [
-			"omegasleepy.contentmod.ContentModClient"
+			"omegasleepy.contentmod.MainClient"
 		]
 	},
 	"mixins": [

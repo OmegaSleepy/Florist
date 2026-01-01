@@ -8,7 +8,7 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
-import omegasleepy.contentmod.ContentMod;
+import omegasleepy.contentmod.MainLogic;
 import omegasleepy.contentmod.block.ModBlocks;
 import omegasleepy.contentmod.block.custom.SimpleFlower;
 import omegasleepy.contentmod.block.custom.SimpleFlowerBed;
@@ -42,9 +42,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('f', ModTags.Items.FLOWERS)
                 .input('m', Items.BONE_MEAL)
                 .criterion(hasItem(ModItems.MAGIC_BONEMEAL), conditionsFromItem(ModItems.MAGIC_BONEMEAL))
-                .offerTo(consumer, Identifier.of(ContentMod.MOD_ID, "magic_bonemeal_with_magical_flowers"));
+                .offerTo(consumer, Identifier.of(MainLogic.MOD_ID, "magic_bonemeal_with_magical_flowers"));
 
-        //here we leave each seperate because flawers in minecraft give different outputCount based on their size
+        //here we leave each seperate because flowers in minecraft give different outputCount based on their size
         for(var that: ModBlocks.oneTallFlowers){
             if(that instanceof SimpleFlower exactlyThat){
                 offerShapelessRecipe(consumer, exactlyThat.getDye(), that, "", 1);

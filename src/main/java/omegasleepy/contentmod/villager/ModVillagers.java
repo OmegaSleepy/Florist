@@ -12,7 +12,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.village.VillagerProfession;
 import net.minecraft.world.poi.PointOfInterestType;
-import omegasleepy.contentmod.ContentMod;
+import omegasleepy.contentmod.MainLogic;
 
 public class ModVillagers {
 
@@ -22,22 +22,23 @@ public class ModVillagers {
     public static final VillagerProfession BOTANIC = registerProfession("botanic", BOTANIC_POI_KEY);
 
     private static VillagerProfession registerProfession(String name, RegistryKey<PointOfInterestType> type) {
-        return Registry.register(Registries.VILLAGER_PROFESSION, Identifier.of(ContentMod.MOD_ID, name),
+        return Registry.register(Registries.VILLAGER_PROFESSION, Identifier.of(MainLogic.MOD_ID, name),
                 new VillagerProfession(name, entry -> entry.matchesKey(type), entry -> entry.matchesKey(type),
                         ImmutableSet.of(), ImmutableSet.of(), SoundEvents.ENTITY_VILLAGER_WORK_LIBRARIAN));
     }
 
     private static PointOfInterestType registerPOI(String name, Block block) {
-        return PointOfInterestHelper.register(Identifier.of(ContentMod.MOD_ID, name),
+        return PointOfInterestHelper.register(Identifier.of(MainLogic.MOD_ID, name),
                 1, 1, block);
     }
 
     private static RegistryKey<PointOfInterestType> registerPoiKey(String name) {
-        return RegistryKey.of(RegistryKeys.POINT_OF_INTEREST_TYPE, Identifier.of(ContentMod.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.POINT_OF_INTEREST_TYPE, Identifier.of(MainLogic.MOD_ID, name));
     }
 
+    //TODO find out why the villager has a strange texture issues
     public static void registerVillagers(){
-        ContentMod.LOGGER.info("Registering Villagers for " + ContentMod.MOD_ID);
+        MainLogic.LOGGER.info("Registering Villagers for " + MainLogic.MOD_ID);
     }
 
 }
