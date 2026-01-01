@@ -1,4 +1,4 @@
-package omegasleepy.contentmod.block.custom;
+package omegasleepy.contentmod.block.flower;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.FlowerBlock;
@@ -7,7 +7,6 @@ import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.shape.VoxelShape;
 import omegasleepy.contentmod.block.ModBlocks;
 
 public class SimpleFlower extends FlowerBlock {

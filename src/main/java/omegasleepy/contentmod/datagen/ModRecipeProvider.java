@@ -10,9 +10,9 @@ import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
 import omegasleepy.contentmod.MainLogic;
 import omegasleepy.contentmod.block.ModBlocks;
-import omegasleepy.contentmod.block.custom.SimpleFlower;
-import omegasleepy.contentmod.block.custom.SimpleFlowerBed;
-import omegasleepy.contentmod.block.custom.SimpleTallFlower;
+import omegasleepy.contentmod.block.flower.SimpleFlower;
+import omegasleepy.contentmod.block.flower.SimpleFlowerBed;
+import omegasleepy.contentmod.block.flower.SimpleTallFlower;
 import omegasleepy.contentmod.item.ModItems;
 import omegasleepy.contentmod.util.ModTags;
 

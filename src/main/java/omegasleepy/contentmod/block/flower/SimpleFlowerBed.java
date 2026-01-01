@@ -1,4 +1,4 @@
-package omegasleepy.contentmod.block.custom;
+package omegasleepy.contentmod.block.flower;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.FlowerbedBlock;

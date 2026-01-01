@@ -1,4 +1,4 @@
-package omegasleepy.contentmod.block.custom;
+package omegasleepy.contentmod.block.flower;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Blocks;

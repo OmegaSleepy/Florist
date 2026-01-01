@@ -10,10 +10,10 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import omegasleepy.contentmod.MainLogic;
-import omegasleepy.contentmod.block.custom.SimpleFlower;
-import omegasleepy.contentmod.block.custom.SimpleFlowerBed;
-import omegasleepy.contentmod.block.custom.SimpleLilyPad;
-import omegasleepy.contentmod.block.custom.SimpleTallFlower;
+import omegasleepy.contentmod.block.flower.SimpleFlower;
+import omegasleepy.contentmod.block.flower.SimpleFlowerBed;
+import omegasleepy.contentmod.block.flower.SimpleLilyPad;
+import omegasleepy.contentmod.block.flower.SimpleTallFlower;
 
 import java.util.ArrayList;
 import java.util.HashMap;
