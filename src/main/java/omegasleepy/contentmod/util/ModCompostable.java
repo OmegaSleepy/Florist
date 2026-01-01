@@ -11,6 +11,10 @@ public class ModCompostable {
             ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(that.asItem(), 0.65F);
         }
 
+        for (var that: ModBlocks.flowerbeds){
+            ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(that.asItem(), 0.35F);
+        }
+
         for (var that: ModBlocks.twoTallFlowers){
             ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(that.asItem(), 0.7F);
         }

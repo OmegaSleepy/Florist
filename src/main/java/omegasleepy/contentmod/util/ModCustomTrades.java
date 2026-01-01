@@ -1,6 +1,7 @@
 package omegasleepy.contentmod.util;
 
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.village.TradeOffer;
@@ -40,10 +41,10 @@ public class ModCustomTrades {
                 });
 
         TradeOfferHelper.registerVillagerOffers(ModVillagers.BOTANIC, 2,
-                ModCustomTrades::addAllFlowers);
+                factories -> ModCustomTrades.addBlocks(factories, ModBlocks.oneTallFlowers));
 
         TradeOfferHelper.registerVillagerOffers(ModVillagers.BOTANIC, 3,
-                ModCustomTrades::addAllFlowers);
+                factories -> ModCustomTrades.addBlocks(factories, ModBlocks.flowerbeds));
 
         TradeOfferHelper.registerVillagerOffers(ModVillagers.BOTANIC, 4,
                 factories -> {
@@ -73,12 +74,12 @@ public class ModCustomTrades {
                 });
 
         TradeOfferHelper.registerVillagerOffers(ModVillagers.BOTANIC, 5,
-                ModCustomTrades::addAllTallFlowers);
+                factories -> ModCustomTrades.addBlocks(factories, ModBlocks.twoTallFlowers));
 
     }
 
-    private static void addAllFlowers (List<TradeOffers.Factory> factories) {
-        for (var that : ModBlocks.flowers) {
+    private static void addBlocks (List<TradeOffers.Factory> factories, List<Block> blocks) {
+        for (var that : blocks) {
             factories.add((entity, random) -> new TradeOffer(
                     new ItemStack(Items.EMERALD, 4),
                     new ItemStack(that, 8),
@@ -88,21 +89,6 @@ public class ModCustomTrades {
             ));
         }
     }
-
-    private static void addAllTallFlowers (List<TradeOffers.Factory> factories) {
-        for (var that : ModBlocks.twoTallFlowers) {
-            factories.add((entity, random) -> new TradeOffer(
-                    new ItemStack(Items.EMERALD, 4),
-                    new ItemStack(that, 8),
-                    16,
-                    2,
-                    0.05f
-            ));
-        }
-    }
-
-
-
 
     public static void registerCustomTrades () {
         botanist();
