@@ -31,28 +31,28 @@ public class ModBlocks {
     public static final Block ORCHID = registerFlower("orchid",
             new SimpleFlower(StatusEffects.FIRE_RESISTANCE, 100, MapColor.PALE_PURPLE, Items.MAGENTA_DYE));
 
-//    public static final Block POTTED_ORCHID = registerFlowerPot(ORCHID, "orchid");
 
     public static final Block CHRYSANTHEMUM = registerFlower("chrysanthemum",
             new SimpleFlower(StatusEffects.FIRE_RESISTANCE, 100, MapColor.YELLOW, Items.YELLOW_DYE));
 
-//    public static final Block POTTED_CHRYSANTHEMUM = registerFlowerPot(CHRYSANTHEMUM, "chrysanthemum");
 
     public static final Block AMARYLLIS = registerFlower("amaryllis",
             new SimpleFlower(StatusEffects.FIRE_RESISTANCE, 100, MapColor.DARK_RED, Items.RED_DYE));
 
-//    public static final Block POTTED_AMARYLLIS = registerFlowerPot(AMARYLLIS, "amaryllis");
+    //TODO add texture and run datagen
+    public static final Block VIOLET = registerFlower("violet",
+            new SimpleFlower(StatusEffects.BLINDNESS, 100, MapColor.PURPLE, Items.PURPLE_DYE));
 
     public static final Block BLUEBELL = registerFlower("bluebell",
             new  SimpleFlower(StatusEffects.REGENERATION, 100, MapColor.TERRACOTTA_PURPLE, Items.BLUE_DYE));
 
-//    public static final Block POTTED_BLUEBELl = registerFlowerPot(BLUEBELL, "bluebell");
 
     public static final Block IVY = registerBlock("ivy",
             new SimpleFlowerBed(MapColor.DARK_GREEN, Items.GREEN_DYE));
 
     public static final Block RED_GINGER = registerBlock("red_ginger",
             new SimpleTallFlower(MapColor.RED, Items.RED_DYE));
+
 
 
     private static Block registerBlock(String name, Block block) {

@@ -4,7 +4,6 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemUsageContext;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
@@ -33,7 +32,6 @@ public class MagicBoneMealItem extends Item {
             assert context.getPlayer() != null;
 
             if(isValidBlock(blockClicked)) {
-//                context.getPlayer().giveItemStack(blockClicked.getPickStack(world,context.getBlockPos(),blockClicked.getDefaultState()));
                 context.getPlayer().addExperience(1);
                 context.getStack().decrement(1);
                 world.playSound(null, context.getBlockPos(), SoundEvents.BLOCK_AMETHYST_BLOCK_RESONATE, SoundCategory.BLOCKS, 1.0F, 1.0F);
@@ -45,24 +43,18 @@ public class MagicBoneMealItem extends Item {
                                     x+0.5,y,z+0.5,
                                     blockClicked.getPickStack(world,context.getBlockPos(),blockClicked.getDefaultState())));
                 }
-
-
-                ((ServerWorld) world).spawnParticles(
+                for (int i = 0; i < 300; i++) {((ServerWorld) world).spawnParticles(
                         ModParticles.GREEN_SPARKLE,
                         x + 0.5,
                         y + 2,
                         z + 0.5,
-                        300,
-                        0,
-                        1,
-                        0,
-                        0.01
-                        );
+                        1, 0, 1, 0, 0.01
+                );}
+
             } else{
                 return ActionResult.FAIL;
             }
 
-//            context.getPlayer().getItemCooldownManager().set(this, 2);
         }
 
 

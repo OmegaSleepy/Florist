@@ -16,7 +16,6 @@ public class ModParticles {
         return Registry.register(Registries.PARTICLE_TYPE, Identifier.of(ContentMod.MOD_ID, particleName), defaultParticleType);
     }
 
-
     public static void registerParticles() {
         ContentMod.LOGGER.info("Registering Particles for " + ContentMod.MOD_ID);
     }
