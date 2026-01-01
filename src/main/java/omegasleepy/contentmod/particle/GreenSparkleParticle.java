@@ -11,7 +11,7 @@ public class GreenSparkleParticle extends SpriteBillboardParticle {
         super(clientWorld, x, y, z, xSpeed, ySpeed, zSpeed);
 
         this.velocityMultiplier = 0.8F;
-        this.maxAge = 1;
+        this.maxAge = 100;
         this.setSpriteForAge(spriteProvider);
     }
 
