@@ -1,5 +1,15 @@
 {
   "item.contentmod.magic_bonemeal": "Magical Bone Meal",
+  "item.contentmod.one_karat": "Karat 1₭",
+  "item.contentmod.two_karat": "Karat 2₭",
+  "item.contentmod.five_karat": "Karat 5₭",
+  "item.contentmod.ten_karat": "Karat 10₭",
+  "item.contentmod.twenty_karat": "Karat 20₭",
+  "item.contentmod.fifty_karat": "Karat 50₭",
+  "item.contentmod.one_hundred_karat": "Karat 100₭",
+  "item.contentmod.two_hundred_karat": "Karat 200₭",
+  "item.contentmod.five_hundred_karat": "Karat 500₭",
+  "item.contentmod.ten_hundred_karat": "Karat 1000₭",
 
   "block.contentmod.orchid": "Orchid",
   "block.contentmod.chrysanthemum": "Chrysanthemum",
@@ -17,5 +27,8 @@
   "tag.item.contentmod.magic_flowers": "Martinika Flowers",
   "tag.block.contentmod.magic_flowers": "Martinika Flowers",
 
-  "itemgroup.contentmod.martinica": "Martinika"
+  "tag.item.contentmod.money": "Karat Money",
+
+  "itemgroup.contentmod.martinica": "Martinika",
+  "itemgroup.contentmod.money": "Money"
 }

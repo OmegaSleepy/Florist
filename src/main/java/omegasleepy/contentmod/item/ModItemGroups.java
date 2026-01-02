@@ -30,7 +30,7 @@ public class ModItemGroups {
     public static final ItemGroup MONEY = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(MainLogic.MOD_ID, "money"),
             FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.ONE_HUNDRED_KARAT))
-                    .displayName(Text.translatable("itemgroup.contentmod.martinica"))
+                    .displayName(Text.translatable("itemgroup.contentmod.money"))
                     .entries((displayContext, entries) -> {
                         entries.addAll(getItems(ModItems.money_items));
                     }).build()
