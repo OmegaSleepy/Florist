@@ -33,6 +33,7 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.contentmod.money"))
                     .entries((displayContext, entries) -> {
                         entries.addAll(getItems(ModItems.money_items));
+                        entries.add(ModBlocks.BANKOMAT);
                     }).build()
             );
 

@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import omegasleepy.contentmod.behavior.ModBehavior;
 import omegasleepy.contentmod.block.ModBlocks;
+import omegasleepy.contentmod.block.entity.ModBlockEntities;
 import omegasleepy.contentmod.item.ModItemGroups;
 import omegasleepy.contentmod.item.ModItems;
 import omegasleepy.contentmod.particle.ModParticles;
@@ -22,6 +23,7 @@ public class MainLogic implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModBlockEntities.init();
 
 		ModParticles.registerParticles();
 

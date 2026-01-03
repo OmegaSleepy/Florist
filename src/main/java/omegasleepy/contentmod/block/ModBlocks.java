@@ -10,6 +10,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import omegasleepy.contentmod.MainLogic;
+import omegasleepy.contentmod.block.blockEntities.PedestalBlock;
 import omegasleepy.contentmod.block.flower.SimpleFlower;
 import omegasleepy.contentmod.block.flower.SimpleFlowerBed;
 import omegasleepy.contentmod.block.flower.SimpleLilyPad;
@@ -63,6 +64,12 @@ public class ModBlocks {
 
     public static final Block RED_GINGER = registerBlock("red_ginger",
             new SimpleTallFlower(MapColor.RED, Items.RED_DYE));
+
+
+    /* ===== OTHER ===== */
+
+    public static final Block BANKOMAT = registerBlock("bank_terminal",
+            new PedestalBlock(FabricBlockSettings.copyOf(Blocks.IRON_DOOR)));
 
     /* ===== Utility ===== */
 
